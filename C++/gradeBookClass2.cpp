@@ -10,9 +10,9 @@ using std::getline;
 class gradeBook
 {
 public:
-  void setCourseName(string newCourseName)
+  void setCourseName(string courseName)
   {
-    courseName = newCourseName;
+    this->courseName = courseName;
   }
   string getCourseName()
   {
