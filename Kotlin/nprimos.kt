@@ -1,12 +1,12 @@
 fun main(){
 
-  var naoprimo = true
+
   println("Digite um numero: ")
   val n = readLine()!!.toInt()
 
+  
+  println(n)
 
-  for (i in 1..n) {
-    while(naoprimo)
+
 
   }
-}
