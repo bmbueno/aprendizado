@@ -1,39 +1,43 @@
 #!/bin/bash
 
-
-echo "Nome do fonte: "
-read nome;
-echo "Aguardando modificações ..."
+echo -e "\033[1;37mFile name:  \033[0m"
+read name;
 
 sufix=".kt"
-nome_arq="$nome$sufix"
->"$nome.jar"
+nameFile="$name$sufix"
+>"$name.jar"
 
-seconds=$(date -r $nome_arq +%s);
-novo=$seconds;
+if [ -e $nameFile ]; then
+  seconds=$(date -r $nameFile +%s);
+  new=$seconds;
 
-while true
+  echo -e "\033[5;35mAwaiting changes ... \033[0m"
+
+  while [ -e $nameFile ]
   do
-	if [ "$seconds" != "$novo" ];
-	 then
-    echo -e "\nCompilando ... "
-    secondsC=$(date -r "$nome.jar" +%s);
-    kotlinc $nome_arq -include-runtime -d "$nome.jar"
-    novo1=$(date -r "$nome.jar" +%s);
+      if [ "$seconds" != "$new" ];
+       then
+          echo -e "\033[1;34m \nCompiling ... \033[0m"
+          secondsC=$(date -r "$name.jar" +%s);
+          kotlinc $nameFile -include-runtime -d "$name.jar"
+          newC=$(date -r "$name.jar" +%s);
 
-    if [ -e "$nome.jar" ] && [ "$secondsC" != "$novo1" ]; then
-      echo -e "Feito ! \n"
-      echo "--------------Inicio Execução:--------------"
-      java -jar "$nome.jar"
-      echo -e "\n--------------Fim da Execução--------------\n"
-      else
-      echo "ERRO AO COMPILAR"
-    fi
+          if [ -e "$name.jar" ] && [ "$secondsC" != "$newC" ]; then
+            echo -e "\033[1;32mDone. \n  \033[0m"
+            echo -e "\033[1;30m--------------Start execution:--------------\033[0m"
+            java -jar "$name.jar"
+            echo -e "\033[1;30m\n--------------End of execution--------------\n\033[0m"
+            else
+            echo -e "\033[1;31mERROR.  \033[0m"
+          fi
 
-    seconds=$novo;
-    echo "Aguardando novas modificações ..."
-	fi
+        seconds=$new;
+        echo -e "\033[5;35mWaiting for new changes ...\033[0m"
+      fi
 
-	novo=$(date -r $nome_arq +%s)
-
-done
+      new=$(date -r $nameFile +%s)
+  done
+else
+  echo -e "\033[1;31mFile not found\033[0m"
+  rm "$name.jar"
+fi
