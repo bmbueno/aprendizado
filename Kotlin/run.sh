@@ -1,10 +1,9 @@
 #!/bin/bash
 
-echo -e "\033[1;37mFile name:  \033[0m"
-read name;
+name=$1;
 
 sufix=".kt"
-nameFile="$name$sufix"
+nameFile="$(pwd)/$name$sufix"
 >"$name.jar"
 
 if [ -e $nameFile ]; then
