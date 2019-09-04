@@ -1,0 +1,43 @@
+label, input {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+
+}
+h1, h2, h3 {
+    font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+}
+
+
+#login {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: green;
+    margin: 100px;
+    width: 320px;
+    border-radius: 10px;
+
+}
+
+#login div {
+    padding: 10px 0px 10px;
+
+}
+
+#login input {
+
+    padding: 10px;
+}
+#login form {
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+ label {
+     padding: 10px;
+ }
+#botao-login {
+    width: 100%;
+}
