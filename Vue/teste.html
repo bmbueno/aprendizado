@@ -5,6 +5,7 @@
     <title> Login </title>
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
 </head>
 
 <body>
@@ -13,18 +14,39 @@
     </div>
     <div id="login">
         <h2>Login</h2>
-        <form method="post">
+        <form v-on:submit.prevent="submitLogin" method="post">
             <div>
                 <label> Usuário: </label>
-                <input id="user" type="text" placeholder="Digite seu usuário:">
+                <input id="user" type="text" v-model="user" placeholder="Digite seu usuário:">
             </div>
             <div>
                 <label> Senha: </label>
-                <input id="password" type="password" placeholder="Digite sua senha:">
+                <input id="password" type="password" v-model="password" placeholder="Digite sua senha:">
             </div>
-            <input id="botao-login"type="submit" name="login" value="Login">
+            <div >
+                <input  type="submit" name="login" value="Login">
+            </div>
         </form>
     </div>
+
+
+    <script type="text/javascript">
+        new Vue({
+            el: '#login',
+            data: {
+                user: "",
+                password: "",
+                logLogin: ""
+            },
+            methods: {
+                submitLogin: function(event) {
+                    this.logLogin = "Login efetuado!";
+                    console.log('Usuário:', this.user);
+                    console.log('Senha:', this.password);
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
