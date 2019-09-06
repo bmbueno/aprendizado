@@ -4,45 +4,59 @@ label, input {
 }
 h1, h2, h3 {
     font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+    margin: 0px 0px;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ace2df;
+}
 
 #login {
     display: flex;
     flex-direction: column;
     padding: 20px;
     background-color: #27918c;
-
     width: 320px;
     border-radius: 10px;
+}
+
+#login form {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+
+align-items: center;
 
 }
 
 #login form div {
-    padding: 10px 0px 0px 10px;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 10px;
 
 
 }
+ label {
+     display: flex;
+     padding: 0px 0px 0px 10px;
+ }
 
-#login input {
-    width: 90%;
+#login input  {
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#login form {
-    display: block;
-    padding: 10px;
+body > div {
+  display: flex;
+  flex-direction: column;
 
 }
- label {
-     display: block;
-     padding: 10px 0px 0px 10px;
- }
-#submitButton {
-    padding: 30px 0px 0px 10px;
-    display: flex;
 
+#logo-centro {
+  max-width: 300px;
 }
