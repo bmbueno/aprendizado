@@ -14,6 +14,7 @@
     </div>
     <div id="login">
         <h2>Login</h2>
+        <h5 v-if="statusLogin"> Falha no Login! </h5>
         <form v-on:submit.prevent="submitLogin" method="post">
             <div>
                 <label> Usuário: </label>
@@ -25,6 +26,7 @@
             </div>
             <div >
                 <input id="submitButton" type="submit" value="Login">
+
             </div>
         </form>
     </div>
@@ -36,11 +38,16 @@
             data: {
                 user: "",
                 password: "",
-                logLogin: ""
+                statusLogin: false
             },
             methods: {
+
                 submitLogin: function(event) {
-                    this.logLogin = "Login efetuado!";
+                  if (this.user === '00261613') {
+                      this.statusLogin = true;
+                      
+                  }
+
                     console.log('Usuário:', this.user);
                     console.log('Senha:', this.password);
                 }
