@@ -1,6 +1,6 @@
 <template>
-  <div >
-    <h2>logi</h2>
-
+  <div id="app">
+    <h2>login</h2>
+    
   </div>
 </template>

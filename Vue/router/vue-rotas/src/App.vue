@@ -5,6 +5,9 @@
           <p> Testando </p>
       </div>
       <div class="container">
+
+          <router-link to='/'> Login </router-link>
+          <router-link to='/formulario'> Formulario </router-link>
           <router-view></router-view>
 
       </div>

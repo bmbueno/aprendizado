@@ -1,8 +1,4 @@
-label, input {
-    font-family: "Open Sans", Helvetica, Arial, sans-serif;
-
-}
-h1, h2, h3, h5 {
+h1, h2, h5, input, label {
     font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
     margin: 0px 0px;
 }
@@ -21,52 +17,19 @@ body {
   background-color: #ace2df;
 }
 
-#login {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background-color: #27918c;
-    width: 300px;
-    border-radius: 10px;
-}
-
-#login form {
-    display: flex;
-    padding: 0px;
-    flex-direction: column;
-    align-items: center;
-}
-
-#login form div {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    padding: 4px;
-
-
-}
- label {
-     display: flex;
-     padding: 0px 0px 0px 10px;
- }
-
-#login input  {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 body > div {
   display: flex;
   flex-direction: column;
-
 }
 
-#logo-centro {
-  max-width: 300px;
-}
+
+
 #submitButton {
-  border-radius: 15px;
+  border-radius: 10px;
   background-color: #B98C2D;
-￼  border-color: #B98C2D;
+  border: 1px solid #d2a445;
+  margin: 10px 0px 0px 0px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
 }
