@@ -1,26 +1,36 @@
-input  {
-    padding: 5px;
-    display:;
+form  {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+
 }
 form li {
     display: flex;
-    flex-direction: row;
-    margin: 5px;
+    flex-direction: row;  /*podes alterar para column e as labels ficam em cima dos campos*/
+    margin: 0.5em;
     padding: 4px;
+
 }
 
 ul {
     list-style-type: none;
-}
-label {
-    margin: 0px 10px 0px 0px;
-
+    width: 100%;
 }
 
 li div {
     display: inline;
-    
+}
+
+li > input {
+    width: 110%;
+}
+label {
+    margin: 0px 10px 0px 0px;
+    font-size: 0.9em;
+
+}
+input  {
+    display: inline-flex;
+    padding: 5px;
+    margin: 0.1em;
 }
